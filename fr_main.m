@@ -1,5 +1,7 @@
 
-%%
+%%Loading Database
+
+
 
 facedatabase = imageSet('data','recursive');
 
@@ -8,11 +10,12 @@ facedatabase = imageSet('data','recursive');
 
 %%
 
+
 figure;
 montage(facedatabase(1).ImageLocation);
 title('Image of Single faces');
 
-% 
+
 % persontoquery =1;
 % 
 % galleryImage = read(facedatabase(persontoquery),1);
@@ -28,14 +31,14 @@ title('Image of Single faces');
 
 
 
-%%
+%% Dividing the dataset into training set and test set in 8:2
 
 
 [training,test] = partition(facedatabase,[0.8 0.2]);
 
 
 
-%%
+%% Extracting Hog Feature for a person 
 
 
 
@@ -50,7 +53,7 @@ subplot(2,1,2);plot(visualization);title('Hog feature');
 
 
 
-%%
+%% Extracting hog features for all images
 
 
 trainingFeatures = zeros(size(training,2)*training(1).Count,4680);
@@ -68,14 +71,14 @@ end
 
 
 
-%%
+%% Machine learning algorithm ecoc //training classifier
 
 
 faceClassifier = fitcecoc(trainingFeatures,trainingLabel);
 
 
             
-%%
+%% 
 
 
 person =1;

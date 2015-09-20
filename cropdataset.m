@@ -1,5 +1,10 @@
+
+%%To Crop the Faces Automatically from a Dataset folder
+
 clear all;
 close all;
+
+
 
 for i = 1:10
    
