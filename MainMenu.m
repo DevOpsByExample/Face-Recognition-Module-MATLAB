@@ -11,7 +11,9 @@ while (1==1)
                 'Test',...
                 'Open Image From System',...
                 'Exit');
-    if (choice ==1)
+    
+    %% Generating Database " loading dataset into matlab"
+        if (choice ==1)
          
             choice2 = questdlg('Generate a new database?', ...
                                'Warning...',...
@@ -26,6 +28,7 @@ while (1==1)
               
     end
     
+    %%Establishing Training set and test set by dividing the dataset in 8:2 
     
     if (choice == 2)
         
@@ -36,6 +39,8 @@ while (1==1)
        end
         
     end
+    
+    %%Feature Extraction 
     
     if (choice == 3)
          if (~exist('facedatabase','var'))
@@ -61,6 +66,8 @@ while (1==1)
           
         
     end
+    
+    %%Generating Classfier using ecoc machine learning algorithm 
     if (choice == 4)
 
          if (~exist('facedatabase','var'))
@@ -77,6 +84,8 @@ while (1==1)
          end
          
     end
+    
+    %% Prediction "Recognition"
     
     if (choice == 5)
          if (~exist('facedatabase','var'))
@@ -114,6 +123,8 @@ while (1==1)
          end
         
     end    
+    
+    %% Reading image from a path and recognising the person from the dataset
 
     if (choice == 6)
          if (~exist('facedatabase','var'))
