@@ -4,8 +4,7 @@ close all;
 name = '1.jpg';
 s3 = '.pgm';
 save = strcat(s1,s3);
-        
- A = imread(name);
+A = imread(name);
 
 %%computer vision facedetector
 
